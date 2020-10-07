@@ -43,7 +43,7 @@
 			<version>4.3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>groupId</groupId>
+			<groupId>com.telegram</groupId>
 			<artifactId>telegram-api-component</artifactId>
 			<version>1.0</version>
 		</dependency>
