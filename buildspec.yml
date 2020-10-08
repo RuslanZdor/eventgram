@@ -6,15 +6,18 @@ phases:
       java: corretto8
     commands:
       - cp ./settings.xml /root/.m2/settings.xml
-  build:
-    commands:
       - echo Build started on `date`
       - echo $CODEARTIFACT_TOKEN
-      - mvn test -X -Pruslanzdor--gram-repo
+      - echo ${env.CODEARTIFACT_TOKEN}
+      - echo CODEARTIFACT_PATH
+      - echo ${env.CODEARTIFACT_PATH}
+  build:
+    commands:
+      - mvn test
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package -Pruslanzdor--gram-repo
+      - mvn package
 artifacts:
   files:
     - target/tubegram-1.0.jar
