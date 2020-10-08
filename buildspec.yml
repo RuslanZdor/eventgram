@@ -9,6 +9,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo ${env.CODEARTIFACT_TOKEN}
+      - echo ${CODEARTIFACT_TOKEN}
       - mvn test -X -Pruslanzdor--gram-repo
   post_build:
     commands:
