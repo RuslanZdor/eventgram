@@ -9,11 +9,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn test
+      - mvn test -X -Pruslanzdor--gram-repo
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn package -Pruslanzdor--gram-repo
 artifacts:
   files:
     - target/tubegram-1.0.jar
