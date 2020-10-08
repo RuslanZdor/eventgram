@@ -7,10 +7,7 @@ phases:
     commands:
       - cp ./settings.xml /root/.m2/settings.xml
       - echo Build started on `date`
-      - echo $CODEARTIFACT_TOKEN
-      - echo ${env.CODEARTIFACT_TOKEN}
-      - echo CODEARTIFACT_PATH
-      - echo ${env.CODEARTIFACT_PATH}
+      - export CODEARTIFACT_TOKEN=`aws codeartifact get-authorization-token --domain ruslanzdor --domain-owner 244092297712 --query authorizationToken --output text`
   build:
     commands:
       - mvn test
