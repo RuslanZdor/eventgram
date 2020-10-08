@@ -1,0 +1,30 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+		  <server>
+			<id>ruslanzdor--gram-repo</id>
+			<username>aws</username>
+			<password>${env.CODEARTIFACT_TOKEN}</password>
+		  </server>
+    </servers>
+
+    <profiles>
+		  <profile>
+			<id>ruslanzdor--gram-repo</id>
+			<activation>
+			  <activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+			  <repository>
+				<id>ruslanzdor--gram-repo</id>
+				<url>${env.CODEARTIFACT_PATH}</url>
+			  </repository>
+			</repositories>
+		  </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>wf-repo</activeProfile>
+    </activeProfiles>
+
+</settings>
