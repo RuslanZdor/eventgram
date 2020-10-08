@@ -95,4 +95,12 @@
 		</pluginManagement>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>ruslanzdor--gram-repo</id>
+			<name>aws repository</name>
+			<!--suppress UnresolvedMavenProperty -->
+			<url>${env.CODEARTIFACT_PATH}</url>
+		</repository>
+	</distributionManagement>
 </project>
