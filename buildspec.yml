@@ -11,11 +11,12 @@ phases:
   build:
     commands:
       - mvn test
-      - aws cloudformation package --template-file template-mvn.yml --s3-bucket gram-deploy --output-template-file out.yml
+      - mvn package
   post_build:
     commands:
       - echo Build completed on `date`
       - mvn deploy
+      - aws cloudformation package --template-file template-mvn.yml --s3-bucket gram-deploy --output-template-file out.yml
 artifacts:
   files:
     - target/eventgram-1.0-SNAPSHOT.jar
