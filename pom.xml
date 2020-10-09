@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.telegram.eventbot</groupId>
 	<artifactId>eventgram</artifactId>
-	<version>1.0</version>
+	<version>1.0-SNAPSHOT</version>
 
 	<properties>
 		<java.version>1.8</java.version>
