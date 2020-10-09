@@ -69,6 +69,11 @@
 			<artifactId>okhttp</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.amazonaws.serverless</groupId>
+			<artifactId>aws-serverless-java-container-springboot2</artifactId>
+			<version>1.5.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -81,7 +86,7 @@
 					<version>2.1.6.RELEASE</version>
 					<configuration>
 						<fork>true</fork>
-						<mainClass>com.telegram.eventbot.EventBotApplication</mainClass>
+						<mainClass>com.telegram.eventbot.EventBotFunctionHandler</mainClass>
 					</configuration>
 					<executions>
 						<execution>
