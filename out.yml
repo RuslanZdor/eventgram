@@ -1,27 +1,26 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
+Transform: AWS::Serverless-2016-10-31
 Description: An AWS Lambda application that calls the Lambda API.
 Resources:
   function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: target/eventgram-1.0-SNAPSHOT.jar
+      CodeUri: s3://gram-deploy/b82a4b098cff7791801b69f1167a8066
       Handler: com.telegram.eventbot.EventBotFunctionHandler::handleRequest
       Runtime: java8
-      Description: Java function
+      Description: Lambda function for eventgram request
       MemorySize: 512
       Timeout: 10
-      Role: 'arn:aws:iam::244092297712:role/service-role/test-role-3gz6l3jb'
+      Role: arn:aws:iam::244092297712:role/service-role/test-role-3gz6l3jb
       Events:
         Api1:
           Type: Api
           Properties:
             Path: /prod
             Method: POST
-      # Function's execution role
       Policies:
-        - AWSLambdaBasicExecutionRole
-        - AWSLambdaReadOnlyAccess
-        - AWSXrayWriteOnlyAccess
-        - AWSLambdaVPCAccessExecutionRole
+      - AWSLambdaBasicExecutionRole
+      - AWSLambdaReadOnlyAccess
+      - AWSXrayWriteOnlyAccess
+      - AWSLambdaVPCAccessExecutionRole
       Tracing: Active
