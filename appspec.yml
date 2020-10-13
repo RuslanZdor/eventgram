@@ -1,5 +1,9 @@
 version: 0.0
-os: linux
-files:
-  - source: ./eventgram-1.0-SNAPSHOT.jar
-    destination: /tmp
+Resources:
+  - eventgramJava:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "eventgram-java-2-helloworld-VT7PG8WTPXO8"
+        Alias: "dev"
+        CurrentVersion: 1
+        TargetVersion: 2
