@@ -3,7 +3,6 @@ package com.telegram.eventbot.command;
 import com.telegram.api.ICommandProcessor;
 import com.telegram.eventbot.bean.Category;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
  * Search events by specific category
  */
 @Slf4j
-@Component
 public class StartCommand extends ICommandProcessor {
 
     private final static String COMMAND = "start";

@@ -5,12 +5,12 @@ import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.Event;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import javax.inject.Inject;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -18,11 +18,11 @@ import java.util.function.Function;
  * Show top 10 events provided by PredictHQ API
  */
 @Slf4j
-@Component
 public class EventDetailCommand extends ShowEventsCommand {
 
     private final static String COMMAND = "event";
 
+    @Inject
     public EventDetailCommand(EventAPIClient predictHQClient) {
         super(predictHQClient);
     }

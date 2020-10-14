@@ -24,9 +24,4 @@ public class ShowEventsByCategoryTest {
         assertTrue(query.getQueryParam().containsKey("category"));
         assertEquals("sports", query.getQueryParam().get("category"));
     }
-
-    @Test
-    public void t() {
-        System.out.println("https://api.predicthq.com/v1/events/?category=sports&limit=5&offset=5&place.exact=ORD&sort=start&start.gte=2019-12-29".hashCode());
-    }
 }

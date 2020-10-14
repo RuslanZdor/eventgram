@@ -4,24 +4,23 @@ import com.telegram.api.ICommandProcessor;
 import com.telegram.api.exception.UnexpectedCommandException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.function.Function;
 
 @Slf4j
-@Component
-@RequiredArgsConstructor
+@RequiredArgsConstructor(onConstructor = @__(@Inject))
 public class CommandProcessorImpl extends ICommandProcessor {
 
-    private final ICommandProcessor showEventsCommand;
-    private final ICommandProcessor showEventsByCategory;
-    private final ICommandProcessor nextEventsCommand;
-    private final ICommandProcessor eventDetailCommand;
-    private final ICommandProcessor startCommand;
+    private final ShowEventsCommand showEventsCommand;
+    private final ShowEventsByCategory showEventsByCategory;
+    private final NextEventsCommand nextEventsCommand;
+    private final EventDetailCommand eventDetailCommand;
+    private final StartCommand startCommand;
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {

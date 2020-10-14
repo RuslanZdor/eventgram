@@ -11,12 +11,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import javax.inject.Inject;
 import java.time.LocalDate;
 import java.util.function.Function;
 
@@ -24,8 +24,7 @@ import java.util.function.Function;
  * Show top 10 events provided by PredictHQ API
  */
 @Slf4j
-@Component
-@AllArgsConstructor
+@AllArgsConstructor(onConstructor = @__(@Inject))
 public class ShowEventsCommand extends ICommandProcessor {
 
     private final static String COMMAND = "showevents";
