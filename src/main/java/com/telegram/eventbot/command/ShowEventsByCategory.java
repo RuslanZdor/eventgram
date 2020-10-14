@@ -30,7 +30,7 @@ public class ShowEventsByCategory extends ShowEventsCommand {
     EventAPIClientQuery search(String text) {
         EventAPIClientQuery query = super.search(text);
         findCategory(text).ifPresent( category -> {
-            log.info(String.format("Search for specific category", category.getValue()));
+            log.info(String.format("Search for specific category %s", category.getValue()));
             query.setCategory(category);
         });
         return query;

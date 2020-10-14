@@ -29,19 +29,15 @@ public class EventDetailCommand extends ShowEventsCommand {
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {
-        getId(getText(update)).ifPresent(id -> {
-            getPredictHQClient().getEvents(search(id))
-                    .subscribe(eventSearchResponse -> {
-                        eventSearchResponse.getResults().forEach(event -> {
-                            SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
-                            callback.apply(sendMessage);
-                        });
-                    }, throwable -> {
-                        log.error("Communication error with predictHQ service", throwable);
-                        callback.apply(createSendMessage(getMessage(update).getChatId(), "Error, Cannot find any events"));
-                    }, () -> { }
-                    );
-        });
+        getId(getText(update)).ifPresent(id -> getPredictHQClient().getEvents(search(id))
+                .subscribe(eventSearchResponse -> eventSearchResponse.getResults().forEach(event -> {
+                    SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
+                    callback.apply(sendMessage);
+                }), throwable -> {
+                    log.error("Communication error with predictHQ service", throwable);
+                    callback.apply(createSendMessage(getMessage(update).getChatId(), "Error, Cannot find any events"));
+                }, () -> { }
+                ));
     }
 
     /**
@@ -75,7 +71,7 @@ public class EventDetailCommand extends ShowEventsCommand {
         if (StringUtils.isNotBlank(event.getDescription())) {
             stringBuilder.append(String.format("Description: %s\n", event.getDescription()));
         }
-        stringBuilder.append(String.format("<b>Location</b>\n"));
+        stringBuilder.append("<b>Location</b>\n");
         if (!event.getEntities().isEmpty()) {
             stringBuilder.append(String.format("Address: %s\n", event.getEntities().get(0).getFormatted_address()));
         }

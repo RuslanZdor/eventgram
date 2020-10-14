@@ -70,9 +70,7 @@ public class ShowEventsCommand extends ICommandProcessor {
     }
 
     private String buildEventMessage(Event event) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("<b>%s</b>\n", event.getTitle()));
-        stringBuilder.append(String.format("Date and time: <i>%s - %s</i>\n", event.getStart().toString(), event.getEnd().toString()));
-        return stringBuilder.toString();
+        return String.format("<b>%s</b>\n", event.getTitle()) +
+                String.format("Date and time: <i>%s - %s</i>\n", event.getStart().toString(), event.getEnd().toString());
     }
 }
