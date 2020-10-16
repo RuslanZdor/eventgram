@@ -3,7 +3,7 @@ package com.telegram.eventbot.command;
 import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.Category;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 
 import javax.inject.Inject;
 import java.util.Optional;
@@ -11,7 +11,7 @@ import java.util.Optional;
 /**
  * Search events by specific category
  */
-@Slf4j
+@Log4j
 public class ShowEventsByCategory extends ShowEventsCommand {
 
     private final static String COMMAND = "categorysearch";

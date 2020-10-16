@@ -3,7 +3,8 @@ package com.telegram.eventbot.command;
 import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.Event;
-import lombok.extern.slf4j.Slf4j;
+import com.telegram.eventbot.bean.EventSearchResponse;
+import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -11,13 +12,14 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import javax.inject.Inject;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
 /**
  * Show top 10 events provided by PredictHQ API
  */
-@Slf4j
+@Log4j
 public class EventDetailCommand extends ShowEventsCommand {
 
     private final static String COMMAND = "event";
@@ -29,15 +31,16 @@ public class EventDetailCommand extends ShowEventsCommand {
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {
-        getId(getText(update)).ifPresent(id -> getPredictHQClient().getEvents(search(id))
-                .subscribe(eventSearchResponse -> eventSearchResponse.getResults().forEach(event -> {
+        getId(getText(update)).ifPresent(id -> {
+            log.info(String.format("Response id %s", id));
+            EventSearchResponse response = getPredictHQClient().getEvents(search(id)).block();
+            log.info(String.format("Response %s", response));
+                Objects.requireNonNull(response).getResults().forEach(event -> {
+                    log.info(String.format("Found event %s", event.getTitle()));
                     SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
                     callback.apply(sendMessage);
-                }), throwable -> {
-                    log.error("Communication error with predictHQ service", throwable);
-                    callback.apply(createSendMessage(getMessage(update).getChatId(), "Error, Cannot find any events"));
-                }, () -> { }
-                ));
+                });
+        });
     }
 
     /**

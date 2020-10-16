@@ -1,0 +1,492 @@
+{
+  "count": 5000,
+  "overflow": true,
+  "next": "https://api.predicthq.com/v1/events/?limit=10&offset=10",
+  "previous": null,
+  "results": [
+    {
+      "relevance": 1,
+      "id": "E8C2cvdfcer8Ms52Ch",
+      "title": "( Kizomba & Urban Kiz ) On Tuesdays we Kiz",
+      "description": "On Tuesdays we Kiz\n\nKizomba \n6:45PM - 8:00PM\n\nUrban Kiz \n8:00PM - 9:15PM\n\nKizomba Class is required. Experienced dancers can take both classes but cannot skip Kizomba without a test. \n\nEach class has a 15 minute social practica included\n\nWhat can you expect:\n- Class Curriculum\n- Kizomba Fundamentals\n- Lead & Follow Techniques with connection and musicality \n- Social Dancing Drills\n- Friendly Dance Community \n\n$10 per class\n$15 for both classes\n$6.25/Per Class 1.5 Hours - Package @ $75 for 6 weeks of both classes (6:45PM-8PM & 8:00PM-9:15PM) \n\nLorraines Dance Studio\n1720 N Goldenrod rd Orlando Florida 32807\n\nFor any questions, you can FB message Davidson KUnitydance or call us at 407-720-9727\nwww.kunitydance.com",
+      "category": "performing-arts",
+      "labels": [
+        "performing-arts"
+      ],
+      "rank": 11,
+      "local_rank": 35,
+      "aviation_rank": null,
+      "phq_attendance": 11,
+      "entities": [
+        {
+          "type": "venue",
+          "formatted_address": "1720 North Goldenrod Road\nOrlando, FL 32807\nUnited States of America",
+          "entity_id": "vg8sxWEVjJigpvNUSwPkXu",
+          "name": "Lorraine's Dance Studio"
+        }
+      ],
+      "duration": 9000,
+      "start": "2021-01-12T23:45:00Z",
+      "end": "2021-01-13T02:15:00Z",
+      "updated": "2020-08-27T05:12:01Z",
+      "first_seen": "2020-08-27T03:18:50Z",
+      "timezone": "America/New_York",
+      "location": [
+        -81.287354,
+        28.57076
+      ],
+      "scope": "locality",
+      "country": "US",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "4155751",
+          "4167060",
+          "4176109"
+        ],
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "4155751",
+          "4167060",
+          "4167147"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "mH2HP2XZvE9ndZWsCj",
+      "title": "Flying Film Series “The Pollinator”",
+      "description": "A cinematic journey about the current international bee crisis and what it means for our food security. This film explains the problems of modern large scale agriculture and offers ideas on how it can be improved, illustrated through the migratory pollinators that are a vital cornerstone of our entire food system.",
+      "category": "performing-arts",
+      "labels": [
+        "movie",
+        "performing-arts"
+      ],
+      "rank": 42,
+      "local_rank": 64,
+      "aviation_rank": 0,
+      "phq_attendance": 401,
+      "entities": [
+        {
+          "type": "venue",
+          "formatted_address": "39 Main Street\nPlymouth, NH 03264\nUnited States of America",
+          "entity_id": "Ks8sYew6FzS5ePmRxm2NDZ",
+          "name": "The Flying Monkey Movie House & Performing Centre"
+        }
+      ],
+      "duration": 0,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-12T23:30:00Z",
+      "updated": "2020-06-03T03:21:38Z",
+      "first_seen": "2020-02-13T09:46:32Z",
+      "timezone": "America/New_York",
+      "location": [
+        -71.687454,
+        43.755462
+      ],
+      "scope": "locality",
+      "country": "US",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "5090174",
+          "5086767",
+          "5091310"
+        ],
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "5090174",
+          "5083273",
+          "5088438"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "GaQ5ARARosZPtjCBgj",
+      "title": "Diana Mitchell Art Exhibition - Feathers Fur and Florals",
+      "description": "Come and experience our Artist in Residence at Barossa Chateau. Explore her amazing art and admire the fine details on her pieces of Art!  From Flowers, to birds and animals, Diana's collection has something for everyone.",
+      "category": "expos",
+      "labels": [
+        "expo"
+      ],
+      "rank": 45,
+      "local_rank": 79,
+      "aviation_rank": null,
+      "phq_attendance": 562,
+      "entities": [],
+      "duration": 19800,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T05:00:00Z",
+      "updated": "2020-08-31T06:56:19Z",
+      "first_seen": "2020-08-31T06:33:46Z",
+      "timezone": "Australia/Adelaide",
+      "location": [
+        138.878351,
+        -34.589834
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2061327",
+          "7839648",
+          "2067333"
+        ],
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2061327",
+          "7839644",
+          "2078025"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "kSnXmrtVeJqo42jpK5",
+      "title": "Salvador Dali Sculpture Exhibition",
+      "description": "Explore a surrealist exhibition and sale featuring  authentic Salvador Dali bronze sculptures and graphic artworks, at the d'Arenberg Cube.\n\nSalvador Dalí (1904 –1989) is regarded as a titan of modern art and one of the most important artists of the 20th century, and 2019 marks the 30th anniversary of Salvador Dali's passing. To celebrate this historic occasion, the Dali Universe in Switzerland and Art Evolution.com are touring Australia with a stunning multi million dollar exhibition showcasing some of Dali’s most iconic imagery, including a 6 metre tall monumental elephant sculpture and an array of life size sculptures.",
+      "category": "expos",
+      "labels": [
+        "expo"
+      ],
+      "rank": 45,
+      "local_rank": 77,
+      "aviation_rank": null,
+      "phq_attendance": 562,
+      "entities": [],
+      "duration": 25200,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T06:30:00Z",
+      "updated": "2020-07-02T23:39:02Z",
+      "first_seen": "2020-05-14T06:35:02Z",
+      "timezone": "Australia/Adelaide",
+      "location": [
+        138.548415,
+        -35.198145
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2061327",
+          "7839438",
+          "2066066"
+        ],
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2061327",
+          "7839446",
+          "2061757"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "waJFyu7GD4rmZCc2tv",
+      "title": "Discover Bondi Guided Beach and Coastal Walking Tours",
+      "description": "Discover why Bondi Beach is such an important part of Sydney’s beach and coastal lifestyle, the home of surf lifesaving and the famous Bondi lifesaver. Fun, interactive and informative their relaxed guided walking tours allow you spend time with a \"true blue\" Aussie lifesaver and learn all about the colourful history of Bondi and how surf lifesaving began.\nTake an exclusive tour inside Australia’s oldest surf lifesaving club and have your photo taken with a Bondi Lifesaver on Bondi’s golden sand. Finish up with a guided walk along Bondi’s famous coastal headland where one can discover Aboriginal rock carvings, spot marine life and experience the best viewing points of Bondi and surrounding beaches.",
+      "category": "community",
+      "labels": [
+        "community"
+      ],
+      "rank": 0,
+      "local_rank": 0,
+      "aviation_rank": null,
+      "phq_attendance": null,
+      "entities": [],
+      "duration": 5400,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T01:00:00Z",
+      "updated": "2020-07-23T06:48:15Z",
+      "first_seen": "2020-07-23T06:33:01Z",
+      "timezone": "Australia/Sydney",
+      "location": [
+        151.283032,
+        -33.890602
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2155400",
+          "7839784",
+          "2144319"
+        ],
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2155400",
+          "6619279",
+          "2147714"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "3XKcKrz988NrJQMQW4",
+      "title": "Tea and Cheese Pairing Workshop",
+      "description": "Participants will learn and experience how tea and cheese pairings enhance both, through complex aromas and flavours, producing new third flavours. \n\nNaturally farmed teas from different world regions (Green, Oolongs, Black, and Pu-erh) will be paired with cheeses from different world regions (Spain, France, Holland and Italy). \n\nThis fun workshop will be run by Liliana Algorry, Certified Tea sommelier, and Tea blender. \n\nThe fee includes all cheeses and teas from natural farming as well all equipment to be used during the workshop.",
+      "category": "community",
+      "labels": [
+        "community"
+      ],
+      "rank": 0,
+      "local_rank": 0,
+      "aviation_rank": null,
+      "phq_attendance": null,
+      "entities": [],
+      "duration": 7200,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T01:30:00Z",
+      "updated": "2020-07-02T23:36:08Z",
+      "first_seen": "2018-04-20T19:56:22Z",
+      "timezone": "Australia/Sydney",
+      "location": [
+        151.176528,
+        -33.856201
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2155400",
+          "6619279",
+          "2147714"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "jwDiwFwzSKhsCpVpHv",
+      "title": "Charles Hedgepath",
+      "description": "Charles Hedgepath",
+      "category": "community",
+      "labels": [
+        "concert",
+        "music"
+      ],
+      "rank": 30,
+      "local_rank": 57,
+      "aviation_rank": null,
+      "phq_attendance": 100,
+      "entities": [
+        {
+          "type": "venue",
+          "formatted_address": "111 Augusta Street\nGreenville, SC 29601\nUnited States of America",
+          "entity_id": "RTuCMtyEhyMFzY4vCSBx3H",
+          "name": "Smiley's Acoustic Café"
+        }
+      ],
+      "duration": 0,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-12T23:30:00Z",
+      "updated": "2020-08-27T05:20:17Z",
+      "first_seen": "2020-08-27T03:36:22Z",
+      "timezone": "America/New_York",
+      "location": [
+        -82.405414,
+        34.842952
+      ],
+      "scope": "locality",
+      "country": "US",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "4597040",
+          "4580549",
+          "4580543"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "wYR5eMaV6tXk4sAp64",
+      "title": "Southerntiersmen Chorus Rehearsal",
+      "description": "We are an a cappella chorus welcoming all who love to sing.",
+      "category": "performing-arts",
+      "labels": [
+        "performing-arts"
+      ],
+      "rank": 11,
+      "local_rank": 36,
+      "aviation_rank": null,
+      "phq_attendance": 11,
+      "entities": [
+        {
+          "type": "venue",
+          "formatted_address": "2305 Pierce Creek Road\nBinghamton, NY 13901\nUnited States of America",
+          "entity_id": "9QmFvapKMtXLxH6aWZM3dk",
+          "name": "Fahs Instructional Center,"
+        }
+      ],
+      "duration": 9000,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T02:00:00Z",
+      "updated": "2020-08-27T10:05:35Z",
+      "first_seen": "2020-08-27T03:14:55Z",
+      "timezone": "America/New_York",
+      "location": [
+        -75.882488,
+        42.08625
+      ],
+      "scope": "locality",
+      "country": "US",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "5128638",
+          "5110365",
+          "7223065"
+        ],
+        [
+          "6295630",
+          "6255149",
+          "6252001",
+          "5128638",
+          "5110365",
+          "5109177"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "MXrMxjLQCqQd9pBdRZ",
+      "title": "Beach Kayak Tour",
+      "description": "Bundeena Kayaks runs their popular Beach Kayak Tour twice daily  from their beachfront base in beautiful Bundeena.  This short guided kayak tour (1.5 hours) takes in the gorgeous bays and beaches of this picturesque nature lover's paradise and is the perfect start into the fun sport of kayaking.\n\nAbsolutely perfect for those who haven't kayaked before and would like the assistance of one of experienced and friendly guides. Kayak, paddle and safety vest included as well as basic kayaking instruction and guide accompaniment for duration of tour.",
+      "category": "community",
+      "labels": [
+        "community"
+      ],
+      "rank": 0,
+      "local_rank": 0,
+      "aviation_rank": null,
+      "phq_attendance": null,
+      "entities": [],
+      "duration": 5400,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T01:00:00Z",
+      "updated": "2020-09-23T23:36:47Z",
+      "first_seen": "2018-12-05T06:33:13Z",
+      "timezone": "Australia/Sydney",
+      "location": [
+        151.141607,
+        -34.082575
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2155400",
+          "7839774",
+          "2152674"
+        ],
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2155400",
+          "6619279",
+          "2147714"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    },
+    {
+      "relevance": 1,
+      "id": "e6EFYiLcoJ7Vgw2XRA",
+      "title": "Wind Tubes",
+      "description": "Design and build your very own flying creation to test in the Wind Tubes. See your creation take flight and soar to the ceiling, and defy gravity by hovering high overhead… or just fall to the floor. It’s all about air and invention, with a little bit of mid-air mayhem.\n \nA variety of materials from paper cups to polystyrene balls, streamers, and pipe cleaners provided. Wind Tubes is a fun, interactive exhibition for the whole family.\n\nBookings Essential. To comply with the Gallery’s COVID-Safe plan which limits the number of people in attendance at any one time, visitors are required to pre-book a 90-minute session. Book for all children and accompanying adults. EventBrite link activated on 10 September.",
+      "category": "expos",
+      "labels": [
+        "expo"
+      ],
+      "rank": 45,
+      "local_rank": 72,
+      "aviation_rank": null,
+      "phq_attendance": 562,
+      "entities": [],
+      "duration": 27000,
+      "start": "2021-01-12T23:30:00Z",
+      "end": "2021-01-13T07:00:00Z",
+      "updated": "2020-09-02T07:04:25Z",
+      "first_seen": "2020-09-02T06:39:19Z",
+      "timezone": "Australia/Brisbane",
+      "location": [
+        152.758752,
+        -27.614279
+      ],
+      "scope": "locality",
+      "country": "AU",
+      "place_hierarchies": [
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2152274",
+          "7839562",
+          "2174003"
+        ],
+        [
+          "6295630",
+          "6255151",
+          "2077456",
+          "2152274",
+          "7839586",
+          "2162644"
+        ]
+      ],
+      "state": "active",
+      "brand_safe": true
+    }
+  ]
+}

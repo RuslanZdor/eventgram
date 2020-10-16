@@ -5,7 +5,7 @@ import com.telegram.eventbot.NextLinkStorage;
 import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.bean.Event;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -19,7 +19,7 @@ import java.util.function.Function;
 /**
  * Show top 10 events provided by PredictHQ API
  */
-@Slf4j
+@Log4j
 @AllArgsConstructor(onConstructor = @__(@Inject))
 public class NextEventsCommand extends ICommandProcessor {
 

@@ -1,7 +1,7 @@
 package com.telegram.eventbot.api;
 
 import com.telegram.eventbot.bean.EventSearchResponse;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import org.apache.http.HttpHeaders;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,7 +14,7 @@ import javax.inject.Singleton;
 /**
  * Implementation for PredictHQ service
  */
-@Slf4j
+@Log4j
 @Singleton
 public class PredictHQClient implements EventAPIClient {
 

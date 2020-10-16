@@ -6,7 +6,7 @@ import com.telegram.eventbot.bean.Sort;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 import org.springframework.web.util.UriBuilder;
 
@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
+@Log4j
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class PredictHQQuery implements EventAPIClientQuery {

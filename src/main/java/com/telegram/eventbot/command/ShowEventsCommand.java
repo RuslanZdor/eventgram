@@ -6,10 +6,11 @@ import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.City;
 import com.telegram.eventbot.bean.Event;
+import com.telegram.eventbot.bean.EventSearchResponse;
 import com.telegram.eventbot.bean.Sort;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -23,7 +24,7 @@ import java.util.function.Function;
 /**
  * Show top 10 events provided by PredictHQ API
  */
-@Slf4j
+@Log4j
 @AllArgsConstructor(onConstructor = @__(@Inject))
 public class ShowEventsCommand extends ICommandProcessor {
 
@@ -34,26 +35,29 @@ public class ShowEventsCommand extends ICommandProcessor {
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {
-        predictHQClient.getEvents(search(getText(update)))
-        .subscribe(eventSearchResponse -> {
-            eventSearchResponse.getResults().forEach(event -> {
-                SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
-                sendMessage.setReplyMarkup(createButton("Show information", String.format("event %s", event.getId())));
-                callback.apply(sendMessage);
-            });
-            if (StringUtils.isNoneBlank(eventSearchResponse.getNext())) {
-                SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), "To see more events use button below");
-                sendMessage.setReplyMarkup(createButton("More Events", String.format("next %s", NextLinkStorage.saveURL(eventSearchResponse.getNext()))));
-                callback.apply(sendMessage);
-            }
-        }, throwable -> {
-            log.error("Communication error with predictHQ service", throwable);
-            callback.apply(createSendMessage(getMessage(update).getChatId(), "Error, Cannot find any events"));
-        }, () -> {});
+        log.info("Before search");
+        EventSearchResponse eventSearchResponse = predictHQClient.getEvents(search(getText(update))).block();
+        log.info(String.format("Seqrch finished %s", eventSearchResponse));
+        assert eventSearchResponse != null;
+        if (eventSearchResponse.getResults().isEmpty()) {
+            SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), "No events was found");
+            callback.apply(sendMessage);
+        }
+        eventSearchResponse.getResults().forEach(event -> {
+            SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
+            sendMessage.setReplyMarkup(createButton("Show information", String.format("event %s", event.getId())));
+            callback.apply(sendMessage);
+        });
+        if (StringUtils.isNoneBlank(eventSearchResponse.getNext())) {
+            SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), "To see more events use button below");
+            sendMessage.setReplyMarkup(createButton("More Events", String.format("next %s", NextLinkStorage.saveURL(eventSearchResponse.getNext()))));
+            callback.apply(sendMessage);
+        }
     }
 
     /**
      * Search all events for specific city
+     *
      * @return search query for all events
      */
     EventAPIClientQuery search(String text) {
