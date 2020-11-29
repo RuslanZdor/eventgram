@@ -3,6 +3,8 @@ package com.telegram.eventbot.command;
 import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.Category;
+import com.telegram.eventbot.bean.Event;
+import com.telegram.eventbot.service.EventServiceImpl;
 import lombok.extern.log4j.Log4j;
 
 import javax.inject.Inject;
@@ -17,8 +19,8 @@ public class ShowEventsByCategory extends ShowEventsCommand {
     private final static String COMMAND = "categorysearch";
 
     @Inject
-    public ShowEventsByCategory(EventAPIClient predictHQClient) {
-        super(predictHQClient);
+    public ShowEventsByCategory(EventAPIClient predictHQClient, EventServiceImpl<Event> eventService) {
+        super(predictHQClient, eventService);
     }
 
     /**

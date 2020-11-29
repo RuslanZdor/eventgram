@@ -36,14 +36,14 @@ public class PredictHQClient implements EventAPIClient {
         return webClient.get().uri(uriBuilder -> {
             ((PredictHQQuery) query).apply(uriBuilder);
             return uriBuilder.build();
-        }).header(HttpHeaders.AUTHORIZATION, "Bearer KzbKTASZMcXE38mkinEydlQOq45wLmxLyqBlMI7H")
+        }).header(HttpHeaders.AUTHORIZATION, System.getenv("predict_auth"))
                 .retrieve()
                 .bodyToMono(EventSearchResponse.class);
     }
 
     @Override
     public Mono<EventSearchResponse> getNext(String url) {
-        return webClient.get().uri(url).header(HttpHeaders.AUTHORIZATION, "Bearer KzbKTASZMcXE38mkinEydlQOq45wLmxLyqBlMI7H")
+        return webClient.get().uri(url).header(HttpHeaders.AUTHORIZATION, System.getenv("predict_auth"))
                 .retrieve()
                 .bodyToMono(EventSearchResponse.class);
     }

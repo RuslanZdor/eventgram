@@ -3,7 +3,7 @@ package com.telegram.eventbot.command;
 import com.telegram.eventbot.api.EventAPIClient;
 import com.telegram.eventbot.api.EventAPIClientQuery;
 import com.telegram.eventbot.bean.Event;
-import com.telegram.eventbot.bean.EventSearchResponse;
+import com.telegram.eventbot.service.EventServiceImpl;
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
@@ -25,21 +25,24 @@ public class EventDetailCommand extends ShowEventsCommand {
     private final static String COMMAND = "event";
 
     @Inject
-    public EventDetailCommand(EventAPIClient predictHQClient) {
-        super(predictHQClient);
+    public EventDetailCommand(EventAPIClient predictHQClient, EventServiceImpl<Event> eventService) {
+        super(predictHQClient, eventService);
     }
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {
         getId(getText(update)).ifPresent(id -> {
-            log.info(String.format("Response id %s", id));
-            EventSearchResponse response = getPredictHQClient().getEvents(search(id)).block();
-            log.info(String.format("Response %s", response));
-                Objects.requireNonNull(response).getResults().forEach(event -> {
-                    log.info(String.format("Found event %s", event.getTitle()));
-                    SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
-                    callback.apply(sendMessage);
-                });
+            Optional<Event> eventResult = getEventService().get(id);
+            eventResult.ifPresent(event -> {
+                log.info(String.format("Found event %s", event.getTitle()));
+                SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), buildEventMessage(event));
+                callback.apply(sendMessage);
+            });
+            if (!eventResult.isPresent()) {
+                log.info(String.format("No event found for id %s", id));
+                SendMessage sendMessage = createSendMessage(getMessage(update).getChatId(), String.format("No event found for id %s", id));
+                callback.apply(sendMessage);
+            }
         });
     }
 
@@ -75,10 +78,10 @@ public class EventDetailCommand extends ShowEventsCommand {
             stringBuilder.append(String.format("Description: %s\n", event.getDescription()));
         }
         stringBuilder.append("<b>Location</b>\n");
-        if (!event.getEntities().isEmpty()) {
+        if (Objects.nonNull(event.getEntities()) && !event.getEntities().isEmpty()) {
             stringBuilder.append(String.format("Address: %s\n", event.getEntities().get(0).getFormatted_address()));
         }
-        if (event.getLocation().size() > 1) {
+        if (Objects.nonNull(event.getLocation()) && event.getLocation().size() > 1) {
             stringBuilder.append(String.format("Map: <a href=\"https://maps.google.com/?q=%s,%s\">Google Map</a>\n", event.getLocation().get(1), event.getLocation().get(0)));
         }
         return stringBuilder.toString();

@@ -18,7 +18,7 @@ public class ShowEventsByCategoryTest {
 
     @Test
     public void searchCategoryExist() {
-        ShowEventsByCategory showEventsByCategory = new ShowEventsByCategory(new PredictHQClient());
+        ShowEventsByCategory showEventsByCategory = new ShowEventsByCategory(new PredictHQClient(), null);
         PredictHQQuery query = (PredictHQQuery) showEventsByCategory.search("category sports");
 
         assertTrue(query.getQueryParam().containsKey("category"));

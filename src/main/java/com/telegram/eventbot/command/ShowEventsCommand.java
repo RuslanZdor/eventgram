@@ -8,6 +8,7 @@ import com.telegram.eventbot.bean.City;
 import com.telegram.eventbot.bean.Event;
 import com.telegram.eventbot.bean.EventSearchResponse;
 import com.telegram.eventbot.bean.Sort;
+import com.telegram.eventbot.service.EventServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
@@ -32,6 +33,8 @@ public class ShowEventsCommand extends ICommandProcessor {
 
     @Getter
     private final EventAPIClient predictHQClient;
+    @Getter
+    private final EventServiceImpl<Event> eventService;
 
     @Override
     public void process(Update update, Function<PartialBotApiMethod<Message>, PartialBotApiMethod<Message>> callback) {
