@@ -46,7 +46,7 @@ public class CommandProcessorImpl extends ICommandProcessor {
             ICommandProcessor processor = findCommand(update);
             processor.process(update, callback);
         } catch (UnexpectedCommandException ex) {
-            log.error("Wrong command to process", ex);
+            log.error("Wrong command to process called", ex);
             startCommand.process(update, callback);
         }
     }
