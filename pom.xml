@@ -90,7 +90,7 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <minimizeJar>true</minimizeJar>
+                    <minimizeJar>false</minimizeJar>
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                 </configuration>
                 <executions>
