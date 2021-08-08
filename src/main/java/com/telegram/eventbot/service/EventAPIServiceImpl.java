@@ -5,7 +5,6 @@ import com.telegram.eventbot.bean.Event;
 import com.telegram.eventbot.bean.EventSearchResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.inject.Inject;
 import java.util.Objects;
@@ -38,6 +37,6 @@ public class EventAPIServiceImpl<T> implements DataService<Event> {
 
     @Override
     public void save(Event object) {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }
